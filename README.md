@@ -6,6 +6,7 @@ Homebrew packages for macOS and Linux.
 
 ```sh
 brew install mccodeman/tap/nysos
+nysos --demo  # Built-in six-cue example
 nysos --init demo.toml
 nysos --config demo.toml
 ```
@@ -35,9 +36,9 @@ To build the latest development source instead, use
 
 ## Maintain the formula
 
-The initial 0.1.0 package pins source commit
-`7f5dcfd9cfb2eef9593f214e9fdfbc1279d004e0` because upstream has no release tags yet.
-The archive checksum and embedded build metadata identify that exact revision.
+The stable formula packages the signed upstream `v0.1.1` release with a verified
+archive checksum and embedded commit/tag metadata. It includes the Apache-2.0
+license, NOTICE, and SPDX SBOM alongside the binary and manpage.
 For a new release, update the source URL, version, SHA-256 checksum, and
 `NYSOS_GIT_COMMIT`/`NYSOS_GIT_DESCRIBE` metadata. Set `NYSOS_GIT_TAG` when packaging
 a tagged release. Increment the formula revision when replacing a package without
