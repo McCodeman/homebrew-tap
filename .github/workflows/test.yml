@@ -12,12 +12,9 @@ jobs:
         os: [macos-latest, ubuntu-latest]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: Homebrew/actions/setup-homebrew@master
-      - name: Register checkout as tap
-        run: |
-          mkdir -p "$(brew --repository)/Library/Taps/mccodeman"
-          ln -s "$GITHUB_WORKSPACE" "$(brew --repository)/Library/Taps/mccodeman/homebrew-tap"
+      - uses: Homebrew/actions/setup-homebrew@1f8e202ffddf94def7f42f6fa3a482e821489f9c # 2026.07.10.1
+        with:
+          stable: true
       - run: brew style mccodeman/tap/nysos
       - run: brew install --build-from-source mccodeman/tap/nysos
       - run: brew test mccodeman/tap/nysos

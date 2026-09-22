@@ -11,7 +11,7 @@ nysos --config demo.toml
 ```
 
 [nysos](https://github.com/McCodeman/nysos) presents scripted and interactive CLI
- demos in named terminal panes. The formula builds from source with Homebrew's
+demos in named terminal panes. The formula builds from source with Homebrew's
 Rust dependency and installs the binary and `man nysos`; Nix is not required.
 
 Optional Bash and Zsh completions:
