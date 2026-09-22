@@ -36,7 +36,7 @@ To build the latest development source instead, use
 
 ## Maintain the formula
 
-The stable formula packages upstream `v0.1.3` from a Sigstore-signed commit,
+The stable formula packages upstream `v0.1.4` from a Sigstore-signed commit,
 with a verified archive checksum and embedded commit/tag metadata. It includes the Apache-2.0
 license, NOTICE, and SPDX SBOM alongside the binary and manpage.
 For a new release, update the source URL, version, SHA-256 checksum, and

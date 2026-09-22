@@ -1,8 +1,8 @@
 class Nysos < Formula
   desc "Multi-pane scripted and interactive terminal demonstrations"
   homepage "https://github.com/McCodeman/nysos"
-  url "https://github.com/McCodeman/nysos/archive/refs/tags/v0.1.3.tar.gz"
-  sha256 "dff66c4253a7a32d42daf458eadedd9723d3f39c04f909f3b00ca4192dbcf63c"
+  url "https://github.com/McCodeman/nysos/archive/refs/tags/v0.1.4.tar.gz"
+  sha256 "036b9ca620b0cceb515438dea34e3f99432bb28c82ea3eba835141fe4b081990"
   license "Apache-2.0"
   head "https://github.com/McCodeman/nysos.git", branch: "main"
 
@@ -10,9 +10,9 @@ class Nysos < Formula
 
   def install
     if build.stable?
-      ENV["NYSOS_GIT_COMMIT"] = "f9a2fdaa137f5c6e5e60d656b1b91bee845ad586"
-      ENV["NYSOS_GIT_TAG"] = "v0.1.3"
-      ENV["NYSOS_GIT_DESCRIBE"] = "v0.1.3"
+      ENV["NYSOS_GIT_COMMIT"] = "0a6de8a21c0f2574d30c32356dc419698004d8d7"
+      ENV["NYSOS_GIT_TAG"] = "v0.1.4"
+      ENV["NYSOS_GIT_DESCRIBE"] = "v0.1.4"
     end
     system "cargo", "install", *std_cargo_args
     man1.install "docs/man/nysos.1"
