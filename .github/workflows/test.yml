@@ -1,0 +1,24 @@
+name: Formula
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Homebrew/actions/setup-homebrew@master
+      - name: Register checkout as tap
+        run: |
+          mkdir -p "$(brew --repository)/Library/Taps/mccodeman"
+          ln -s "$GITHUB_WORKSPACE" "$(brew --repository)/Library/Taps/mccodeman/homebrew-tap"
+      - run: brew style mccodeman/tap/nysos
+      - run: brew install --build-from-source mccodeman/tap/nysos
+      - run: brew test mccodeman/tap/nysos
+      - run: brew audit --strict mccodeman/tap/nysos
